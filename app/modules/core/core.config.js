@@ -1,4 +1,4 @@
-import baseTemplate from './modules/shared/page/base.html';
+import baseTemplate from '../shared/page/base.html';
 
 export default function config($urlRouterProvider, $locationProvider, $stateProvider) {
     //$locationProvider.html5Mode(true);
@@ -16,18 +16,27 @@ export default function config($urlRouterProvider, $locationProvider, $stateProv
 
         .state('app.home', {
             url: '/home',
-            template: '<h1>Home Page</h1>'
+            template: '<home />'
         })
 
-        .state('app.about', {
-            url: '/about',
-            template: '<h1>About</h1>'
+        .state('app.pages-list', {
+            url: '/pages',
+            template: '<pages />'
         })
 
-        .state('app.contact', {
-            url: '/contact',
-            template: '<h1>Contact</h1>'
+        .state('app.pages-item', {
+            url: '/pages/:id',
+            templateProvider: ['$stateParams', function ($stateParams) {
+                return '<pages page="' + $stateParams.id + '"/>';
+            }]
         })
+
+        .state('login', {
+            url: '/login',
+            template: '<login />'
+        });
+    
+    
 }
 
 config.$inject = ['$urlRouterProvider', '$locationProvider', '$stateProvider'];

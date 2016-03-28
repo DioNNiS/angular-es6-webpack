@@ -1,6 +1,5 @@
-/**
- * Created by dliger on 8/26/15.
- */
+import angular from 'angular';
+import  './modules/core/core.module';
 
 (function(angular) {
     'use strict';
@@ -12,9 +11,10 @@
         var $http = injector.get('$http');
 
         // "/server/settings.json"
-        return $http.get('/server/1/config/settings.json').then(function(response) {
+        console.log('fetchConfig');
+        return $http.get('/server/1/config/settings.json').then(function(){}, function(response) {
             var coreModule = angular.module('core');
-            coreModule.constant('localSettings', response.data);
+            //coreModule.constant('localSettings', response.data);
         });
     }
 
@@ -24,4 +24,3 @@
         });
     }
 }(angular));
-
