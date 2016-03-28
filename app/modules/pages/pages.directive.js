@@ -9,7 +9,7 @@ export default function PagesDirective() {
         template: pagesTemplate,
         controller: function ($scope, $element, $attrs, $transclude) {
 
-            $scope.title = 'Pages list';
+            $scope.title = 'Pages List';
 
             if ($scope.page) {
                 $scope.title = 'Page - ' + $scope.page;

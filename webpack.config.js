@@ -160,7 +160,12 @@ module.exports = function makeWebpackConfig() {
                 /node_modules/,
                 /\.spec\.js$/
             ],
-            loader: 'isparta-instrumenter'
+            loader: 'isparta-instrumenter',
+            query: {
+                babel: {
+                    presets: ['es2015']
+                }
+            }
         })
     }
 
