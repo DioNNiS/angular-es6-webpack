@@ -9,7 +9,7 @@ import authModule from '../auth/auth.module';
 import homeModule from '../home/home.module';
 import pagesModule from '../pages/pages.module';
 
-angular.module('core', [
+export default angular.module('core', [
         // 3-rd party
         uiRouter,
 

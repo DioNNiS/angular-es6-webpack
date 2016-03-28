@@ -1,4 +1,3 @@
-
 import pagesModule from './pages.module';
 
 describe('pages.module', () => {

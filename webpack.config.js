@@ -89,10 +89,7 @@ module.exports = function makeWebpackConfig() {
                 // Compiles ES6 and ES7 into ES5 code
                 test: /\.js$/,
                 loader: 'babel',
-                exclude: /(node_modules|bower_components)/,
-                query: {
-                    presets: ['es2015']
-                }
+                exclude: /(node_modules|bower_components)/
             },
             {
                 // CSS LOADER
@@ -160,12 +157,7 @@ module.exports = function makeWebpackConfig() {
                 /node_modules/,
                 /\.spec\.js$/
             ],
-            loader: 'isparta-instrumenter',
-            query: {
-                babel: {
-                    presets: ['es2015']
-                }
-            }
+            loader: 'isparta-instrumenter'
         })
     }
 
