@@ -1,6 +1,4 @@
-import 'bootstrap/less/bootstrap.less';
 import './style.less';
-//import 'bootstrap/dist/css/bootstrap.css';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
