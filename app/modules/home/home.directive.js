@@ -1,21 +1,28 @@
 import homeTemplate from './home.html';
 
-homeDirective.$inject = ['randomNames'];
-
-export default function homeDirective(randomNames) {
+export default function homeDirective() {
     return {
         restrict: 'E',
-        scope: {},
+        bindToController: {},
         template: homeTemplate,
-        controllerAs: '$ctrl',
-        controller: function ($scope, $element, $attrs, $transclude) {
-            let $ctrl = this;
-            $ctrl.name = randomNames.getName();
-            
-        }
+        controller: HomeController,
+        controllerAs: '$ctrl'
     }
 }
 
+class HomeController {
+    constructor(randomNames) {
+        this.randomNames = randomNames;
+    }
 
+    $onInit() {
+        this.randomName();
+    }
 
+    randomName() {
+        this.name = this.randomNames.getName();
+    }
+}
+
+HomeController.$inject = ['randomNames'];
 

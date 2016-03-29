@@ -15,7 +15,6 @@ describe('pages.module', () => {
         }));
 
         it('Replaces the element with the appropriate content', function() {
-            console.log('$compile = ', $compile, ' $rootScope = ', $rootScope);
             var element = $compile("<pages></pages>")($rootScope);
             $rootScope.$digest();
             expect(element.html()).toContain("Pages List");

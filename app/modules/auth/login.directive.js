@@ -3,12 +3,21 @@ import loginTemplate from './login.html';
 export default function LoginDirective() {
     return {
         restrict: 'E',
-        scope: {},
+        bindToController: {},
         template: loginTemplate,
-        controller: function ($scope, $element, $attrs, $transclude) {
-
-        }
+        controller: LoginController,
+        controllerAs: '$ctrl'
     }
 }
 
+class LoginController {
+    constructor() {
 
+    }
+
+    $onInit() {
+
+    }
+}
+
+LoginController.$inject = [];

@@ -1,5 +1,7 @@
 import baseTemplate from '../shared/page/base.html';
 
+config.$inject = ['$urlRouterProvider', '$locationProvider', '$stateProvider'];
+
 export default function config($urlRouterProvider, $locationProvider, $stateProvider) {
     //$locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/home');
@@ -12,16 +14,8 @@ export default function config($urlRouterProvider, $locationProvider, $stateProv
         .state('app', {
             abstract: true,
             template: baseTemplate
-        })
-
-
-
-        .state('login', {
-            url: '/login',
-            template: '<login />'
         });
     
     
 }
 
-config.$inject = ['$urlRouterProvider', '$locationProvider', '$stateProvider'];

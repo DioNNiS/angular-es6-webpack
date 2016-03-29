@@ -2,6 +2,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
 import RandomNamesService from './randomNames.service';
+
 import config from './home.config';
 import homeDirective from './home.directive';
 
