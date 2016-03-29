@@ -3,6 +3,8 @@ import coreModule from './modules/core/core.module';
 
 
 angular.element(document).ready(function() {
-    angular.bootstrap(document, [coreModule]);
+    angular.bootstrap(document, [coreModule], {
+        //strictDi: true
+    });
 });
 

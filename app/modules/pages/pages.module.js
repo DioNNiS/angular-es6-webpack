@@ -1,7 +1,10 @@
 import angular from 'angular';
+import uiRouter from 'angular-ui-router';
 
-import PagesDirective from './pages.directive';
+import config from './pages.config';
+import pagesDirective from './pages.directive';
 
-export default angular.module('pages', [])
-    .directive('pages', PagesDirective)
+export default angular.module('pages', [uiRouter])
+    .config(config)
+    .directive('pages', pagesDirective)
     .name;

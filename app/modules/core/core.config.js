@@ -14,22 +14,7 @@ export default function config($urlRouterProvider, $locationProvider, $stateProv
             template: baseTemplate
         })
 
-        .state('app.home', {
-            url: '/home',
-            template: '<home />'
-        })
 
-        .state('app.pages-list', {
-            url: '/pages',
-            template: '<pages />'
-        })
-
-        .state('app.pages-item', {
-            url: '/pages/:id',
-            templateProvider: ['$stateParams', function ($stateParams) {
-                return '<pages page="' + $stateParams.id + '"/>';
-            }]
-        })
 
         .state('login', {
             url: '/login',
