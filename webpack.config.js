@@ -222,8 +222,8 @@ module.exports = function makeWebpackConfig() {
             // Compress assets
             // Reference: https://github.com/webpack/compression-webpack-plugin
             new CompressionPlugin({
-                asset: "[path].gz[query]",
-                algorithm: "gzip",
+                asset: '[path].gz[query]',
+                algorithm: 'gzip',
                 test: /\.js$|\.css$|\.html$/,
                 threshold: 10240,
                 minRatio: 0.8
