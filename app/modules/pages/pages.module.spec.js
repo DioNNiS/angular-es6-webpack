@@ -2,7 +2,7 @@ import pagesModule from './pages.module';
 
 describe('pages.module', () => {
 
-    describe('pages.directive', () => {
+    describe('pages.component', () => {
         let $compile,
             $rootScope;
 

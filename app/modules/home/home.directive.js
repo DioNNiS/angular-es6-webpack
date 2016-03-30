@@ -13,6 +13,7 @@ export default function homeDirective() {
 class HomeController {
     constructor(randomNames) {
         this.randomNames = randomNames;
+        this.name = '';
     }
 
     $onInit() {
@@ -25,4 +26,6 @@ class HomeController {
 }
 
 HomeController.$inject = ['randomNames'];
+
+export {HomeController};
 
