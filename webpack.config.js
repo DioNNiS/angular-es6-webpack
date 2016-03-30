@@ -107,6 +107,7 @@ module.exports = function makeWebpackConfig() {
                 // Reference: https://github.com/webpack/style-loader
                 // Use style-loader in development.
                 loader: isTest ? 'null' : ExtractTextPlugin.extract('style', 'css?sourceMap')
+                //loader: 'null'
             },
             {
                 // LESS LOADER
@@ -119,15 +120,13 @@ module.exports = function makeWebpackConfig() {
                 // Reference: https://github.com/webpack/style-loader
                 // Use style-loader in development.
                 //loader: 'style!css!less'
-
                 loader: isTest ? 'null' : (!isProd ? 'style!css!less' : ExtractTextPlugin.extract(
                         // activate source maps via loader query
                         'css?sourceMap!' +
                         'less?sourceMap'
                     )
                 )
-                //*/
-                //*/
+                //loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
             },
             {
                 // ASSET LOADER
@@ -194,7 +193,8 @@ module.exports = function makeWebpackConfig() {
             // Reference: https://github.com/webpack/extract-text-webpack-plugin
             // Extract css files
             // Disabled when in test mode or not in build mode
-            new ExtractTextPlugin('[name].[hash].css', {disable: !isProd})
+            // new ExtractTextPlugin('[name].[hash].css', {disable: !isProd})
+            new ExtractTextPlugin('style.[hash].css', {disable: !isProd})
         )
     }
 
